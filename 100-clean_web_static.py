@@ -22,6 +22,6 @@ def do_clean(number=0):
         [local("rm ./{}".format(a)) for a in archives]
     with cd("/data/web_static/releases"):
         archives = run("ls -tr").split()
-        archives  = [a for a archives if "web_static_" in a]
+        archives = [a for a archives if "web_static_" in a]
         [archives.pop() for i in range(number)]
         [run("rm -rf ./{}".format(a)) for a in archives]

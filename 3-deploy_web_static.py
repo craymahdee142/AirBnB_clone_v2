@@ -6,7 +6,7 @@ from datetime import datetime
 from os import path
 
 
-env.hosts = ['17.206.20.255', '34.73.75.125']
+env.hosts = ['54.157.147.218', '3.85.41.177']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/id_rsa'
 

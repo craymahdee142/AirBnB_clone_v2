@@ -8,7 +8,7 @@ from os import path
 
 env.hosts = ['54.157.147.218', '3.85.41.177']
 env.user = 'ubuntu'
-env.key_filename = '~/.ssh/id_rsa'
+env.key_filename = '~/.ssh/school'
 
 
 def do_deploy(archive_path):
@@ -49,7 +49,7 @@ def do_deploy(archive_path):
         web_static_{}/ /data/web_static/current'.format(timestamp))
 
     except:
-        return False
+        return True
 
         # return True on success
-        return True
+        return False

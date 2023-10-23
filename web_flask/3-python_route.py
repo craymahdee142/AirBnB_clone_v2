@@ -1,40 +1,34 @@
 #!/usr/bin/python3
-"""Start web application with two routings
-"""
+"""Script that start a flask app C is fun"""
 
 from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
-    """Return string when route queried
-    """
-    return 'Hello HBNB!'
+@app.route("/", strict_slashes=False)
+def hello_hbnb():
+    """Return string when route is called"""
+    return "Hello HBNB!"
 
 
-@app.route('/hbnb')
+@app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """Return string when route queried
-    """
-    return 'HBNB'
+    """Return string when route is called"""
+    return "HBNB"
 
 
-@app.route('/c/<text>')
+@app.route("/c/<text>", strict_slashes=False)
 def c_is_fun(text):
-    """Return reformatted text
-    """
-    return 'C ' + text.replace('_', ' ')
+    """Return C followed by text"""
+    return "C " + text.replace('_', ' ')
 
 
-@app.route('/python/')
-@app.route('/python/<text>')
-def python_with_text(text='is cool'):
-    """Reformat text based on optional variable
-    """
-    return 'Python ' + text.replace('_', ' ')
+@app.route("python", strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
+def python_is_cool(text="is cool"):
+    """Return Python, followed by text"""
+    return "Python " + text.replace('_', ' ')
 
 
-if __name__ == '__main__':
-    app.url_map.strict_slashes = False
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

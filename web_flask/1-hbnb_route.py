@@ -1,24 +1,21 @@
 #!/usr/bin/python3
-"""Start web application with two routings
-"""
+"""Script that start a flask app with two routes"""
 
 from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
-    """Return string when route queried
-    """
-    return 'Hello HBNB!'
+@app.route("/", strict_slashes=False)
+def hello_hbnb():
+    """Return string when route is called"""
+    return "Hello HBNB!"
 
 
-@app.route('/hbnb')
+@app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """Return string when route queried
-    """
-    return 'HBNB'
+    """Return string when route is called"""
+    return "HBNB"
 
-if __name__ == '__main__':
-    app.url_map.strict_slashes = False
+
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

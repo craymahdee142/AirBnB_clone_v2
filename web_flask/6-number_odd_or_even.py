@@ -45,11 +45,7 @@ def number_template(n):
 @app.route("/number_old_or_even/<int:n>", strict_slashes=False)
 def number_old_or_even(n):
     """Dispays HTML page if number is an integer"""
-    if n % 2 == 0:
-        num = "even"
-    else:
-        num = "old"
-    return render_template("6-number_old_or_even.html", n=n, num=num)
+    return render_template("6-number_old_or_even.html", n=n)
 
 
 if __name__ == "__main__":
